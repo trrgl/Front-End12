@@ -1,4 +1,5 @@
 import Header from './components/Header'
+import { useRouter } from 'next/router';
 
 const data = [
   {
@@ -13,6 +14,8 @@ const data = [
 ]
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <div className="bg-black text-white min-h-screen">
       <Header/>
@@ -26,14 +29,10 @@ export default function Home() {
             <h1 className="w-1/12 font-bold">Solved By</h1>
         </div>
         {data.map((challenge) => (
-          <div className="flex items-center p-4 border-b border-r border-l border-white">
+          <div key={challenge.id} className="flex items-center p-4 border-b border-r border-l border-white">
             <h1 className="w-1/6">{challenge.id}</h1>
-            <a className="w-1/3" href="/7secondstoglory">
-              <h1 className="hover:underline cursor-pointer">{challenge.challenge_name}</h1>
-            </a>
-            <a className="w-1/3" href={challenge.event_link}>
-              <h1 className="hover:underline cursor-pointer">{challenge.event_name}</h1>
-            </a>
+            <h1 onClick={() => (router.push(challenge.challenge_dir))} className="w-1/3 hover:underline cursor-pointer">{challenge.challenge_name}</h1>
+            <h1 onClick={() => (router.push(challenge.event_link))} className="w-1/3 hover:underline cursor-pointer">{challenge.event_name}</h1>
             <h1 className="w-1/12">{challenge.author}</h1>
             <h1 className="w-1/12">{challenge.solved_by}</h1>
           </div>
