@@ -9,7 +9,16 @@ const data = [
     event_name: 'Haruul Zangi U18 2025',
     event_link: 'https://www.facebook.com/haruulzangiCTF',
     author: 'fg0x0',
-    solved_by: 'trgl'
+    solved_by: 'trgl',
+  },
+  {
+    id: 2,
+    challenge_name: 'Oracle is here',
+    challenge_dir: 'oracleishere',
+    event_name: 'Haruul Zangi U18 2024',
+    event_link: 'https://www.facebook.com/haruulzangiCTF',
+    author: 'Tulgaaaa',
+    solved_by: 'trgl',
   }
 ]
 
